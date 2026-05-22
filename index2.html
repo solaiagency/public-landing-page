@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solai Agency - Система роста выручки для клиник</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb', // Насыщенный синий цвет, как у конкурента
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        dark: '#0f172a'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-slate-800 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <img src="logo.png" alt="SOLAI Logo" class="h-10 md:h-12 w-auto object-contain">
+                    <span class="font-montserrat font-semibold text-xl md:text-2xl text-dark tracking-tight">Solai Agency</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#problem" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Проблема</a>
+                    <a href="#solution" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Результат</a>
+                    <a href="#demo" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Демонстрация</a>
+                    <a href="https://wa.me/77476822911" target="_blank" class="inline-flex items-center justify-center px-6 py-2.5 border border-transparent rounded-full text-sm font-semibold text-white bg-brand-600 hover:bg-brand-700 shadow-lg shadow-brand-500/30 transition-all hover:-translate-y-0.5">
+                        Связаться в WhatsApp
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-dark focus:outline-none p-2">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 absolute w-full left-0 top-20 shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#problem" class="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Проблема</a>
+                <a href="#solution" class="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Результат</a>
+                <a href="#demo" class="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Демонстрация</a>
+                <div class="pt-4">
+                    <a href="https://wa.me/77476822911" target="_blank" class="block w-full text-center px-5 py-3 rounded-xl text-base font-semibold text-white bg-brand-600 shadow-md">
+                        Связаться в WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero & VSL Section -->
+    <section class="pt-32 pb-20 md:pt-40 md:pb-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+        <div class="text-center max-w-4xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-sm font-medium text-slate-800 mb-6">
+                <span class="flex h-2 w-2 rounded-full bg-brand-500"></span>
+                Система Х5 роста для клиники
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-extrabold text-dark tracking-tight leading-[1.1] mb-6">
+                Новый формат продаж. <br class="hidden md:block">
+                <span class="text-brand-600">+40% к обороту</span> за счёт возврата и допродаж вашей базе.
+            </h1>
+            
+            <p class="mt-4 text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                Работает без найма новых админов и без увеличения трафика.
+            </p>
+            <p class="mt-2 text-lg text-slate-500 font-medium">
+                Пациент остаётся с клиникoй от 1 года, платит минимум 3 раза и сам приводит новых.
+            </p>
+        </div>
+
+        <!-- Video Block -->
+        <div class="mt-16 max-w-5xl mx-auto">
+            <p class="text-center text-sm font-bold tracking-widest text-slate-400 uppercase mb-4">Посмотреть, как система работает внутри (всего 3 минуты для ваших продаж)</p>
+            
+            <!-- EMPTY VIDEO PLACEHOLDER -->
+            <div class="max-w-sm sm:max-w-md mx-auto bg-slate-100 flex items-center justify-center relative" style="border-radius: 12px; box-shadow: 0 20px 40px rgba(37,99,235,0.15); border: 1px solid rgba(0,0,0,0.05); overflow: hidden; padding-top: 144.39%; width: 100%">
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-400">
+                    <svg class="w-16 h-16 mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                    <span class="font-medium text-lg">Место для видео</span>
+                </div>
+            </div>
+
+            <!-- Trust / Testimonial Element -->
+            <div class="mt-8 bg-slate-50 border border-slate-200 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center md:items-start relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-1 h-full bg-brand-600"></div>
+                <div class="flex-shrink-0 text-brand-600">
+                    <svg class="h-10 w-10 opacity-50" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-lg md:text-xl text-slate-700 italic leading-relaxed">
+                        "Мы перестали сливать бюджет на привлечение первички. SOLAI системно возвращает пациентов, которые забыли о нас полгода назад. Нагрузка на ресепшен упала, а выручка с базы выросла на 35% за первые два месяца."
+                    </p>
+                    <div class="mt-4 flex items-center gap-3">
+                        <div class="h-10 w-10 rounded-full bg-slate-300 flex items-center justify-center text-slate-600 font-bold">АМ</div>
+                        <div>
+                            <div class="font-bold text-dark">Алексей М.</div>
+                            <div class="text-sm text-slate-500">Основатель сети частных клиник</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-12 text-center">
+            <a href="https://wa.me/77476822911" target="_blank" class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-brand-600 rounded-full hover:bg-brand-700 hover:shadow-xl hover:shadow-brand-500/30 transition-all hover:-translate-y-1 gap-3 w-full sm:w-auto">
+                Записаться на демонстрацию
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="py-20 md:py-32 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-16">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-dark tracking-tight mb-6">
+                    90% вашей прибыли не в рекламе, <br><span class="text-slate-400">а в базе клиентов.</span>
+                </h2>
+                <p class="text-xl text-slate-600">
+                    Обычный ИИ и администраторы физически не могут справиться с объемом базы. В результате клиника теряет миллионы на "уснувших" пациентах.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-red-50 text-red-500 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Слабая отработка возражений</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Администраторы физически не могут качественно и глубоко закрывать возражения каждого пациента в переписке или по телефону.
+                    </p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-red-50 text-red-500 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Потеря связи</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Никто системно не возвращается к пациентам через 1–6 месяцев после первого визита, чтобы предложить профилактику или следующий этап лечения.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-red-50 text-red-500 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Отсутствие фокуса</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Невозможно держать в фокусе всю базу одновременно. Люди забываются, карточки пылятся в CRM, а вы теряете "теплые" деньги.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW Solution & Results Section (Blue Competitor Style) -->
+    <section id="solution" class="py-20 md:py-32 bg-brand-600 text-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+            
+            <h2 class="text-2xl md:text-4xl font-black uppercase text-center mb-8 tracking-tight leading-tight">
+                РЕЗУЛЬТАТ ДАЁТ <br class="hidden sm:block">
+                ТОЛЬКО ПОСТОЯННАЯ <br class="hidden sm:block">
+                РАБОТА С КЛИЕНТОМ 👇
+            </h2>
+            
+            <p class="text-center text-lg md:text-xl font-bold mb-4 max-w-2xl text-blue-50">
+                12 месяцев - прогревает и дожимает отправляет посты, кейсы, статьи под его ситуацию
+                <span class="mt-3 block font-semibold text-brand-100">→ Имитирует живой интерес + держит контекст диалога</span>
+            </p>
+            
+            <p class="text-center text-base md:text-lg mb-12 max-w-xl text-blue-200">
+                это новый формат — сервиса, который работает не месяц , а на годы
+            </p>
+
+            <!-- White Card -->
+            <div class="bg-white text-slate-900 w-full max-w-2xl rounded-2xl p-8 md:p-10 shadow-2xl mb-12">
+                <h3 class="font-extrabold text-lg md:text-xl mb-6">система дожима + ИИ ведёт пациента:</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <span class="font-bold text-slate-400 mr-3">—</span>
+                        <span class="font-semibold text-slate-800">к оплате первой консультации</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="font-bold text-slate-400 mr-3">—</span>
+                        <span class="font-semibold text-slate-800">к курсу лечения</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="font-bold text-slate-400 mr-3">—</span>
+                        <span class="font-semibold text-slate-800">запускает сарафан - приводя минимум + 5 чел.<br><span class="font-medium text-slate-500 text-sm">(PDF, кейсы, видео, советы)</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="font-bold text-slate-400 mr-3">—</span>
+                        <span class="font-semibold text-slate-800">к возврату на чек-ап и допродажи</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="font-bold text-slate-400 mr-3">—</span>
+                        <span class="font-semibold text-slate-800">к повторным оплатам</span>
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <!-- Bottom Blue Card Container -->
+            <div class="text-center w-full max-w-xl bg-brand-700/40 p-8 md:p-12 rounded-3xl border border-brand-400/20 backdrop-blur-sm">
+                <h3 class="text-xl md:text-2xl font-black uppercase mb-6 tracking-wider">И ВСЁ ЭТО — БЕЗ СПАМА</h3>
+                
+                <p class="text-base md:text-lg text-blue-100 mb-10 leading-relaxed font-medium">
+                    Через грамотную продажу / <br class="hidden sm:block">через доверие напоминания, <br class="hidden sm:block">мини-рекомендации <br class="hidden sm:block">и контроль клиента на каждом этапе
+                </p>
+                
+                <h3 class="text-xl md:text-2xl font-black uppercase mb-8 tracking-wider">РОСТ ОБОРОТА Х5 —</h3>
+                
+                <ul class="text-left max-w-sm mx-auto space-y-4">
+                    <li class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full bg-white flex-shrink-0"></div>
+                        <span class="text-white text-sm md:text-base font-semibold">пациент платит минимум 3 раза</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full bg-white flex-shrink-0"></div>
+                        <span class="text-white text-sm md:text-base font-semibold">LTV растёт в 2-5 раз</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full bg-white flex-shrink-0"></div>
+                        <span class="text-white text-sm md:text-base font-semibold">окупаемость трафика — x5</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full bg-white flex-shrink-0"></div>
+                        <span class="text-white text-sm md:text-base font-semibold">сарафан и рекомендации запускаются автоматически</span>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- NEW: Scenarios Section -->
+    <section class="py-20 md:py-32 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-brand-600 font-bold uppercase tracking-wider text-sm mb-2 block">Как работает система</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-dark tracking-tight mb-6">
+                    Каждый сценарий — <br> закрыт <span class="text-brand-600">автоматически.</span>
+                </h2>
+                <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                    Это не «бот, который шлёт спам». Система ведёт каждого пациента по его сценарию: новый, спящий, постоянный. Помнит контекст. Ждёт правильный момент. Звучит как живой администратор.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-lg border border-slate-100 overflow-hidden">
+                <!-- Header (Hidden on Mobile) -->
+                <div class="hidden md:grid grid-cols-12 gap-6 p-6 border-b border-slate-100 bg-slate-50 font-bold text-slate-500 text-sm uppercase tracking-wider">
+                    <div class="col-span-3">Сценарий пациента</div>
+                    <div class="col-span-6">Что делает AI-система</div>
+                    <div class="col-span-3">Результат</div>
+                </div>
+                
+                <!-- Row 1 -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 p-6 border-b border-slate-100 items-center">
+                    <div class="col-span-1 md:col-span-3 font-bold text-dark"><span class="md:hidden text-brand-600 text-xs uppercase block mb-1">Сценарий:</span> Пациент спросил цену → молчит</div>
+                    <div class="col-span-1 md:col-span-6 text-slate-600"><span class="md:hidden text-brand-600 text-xs uppercase block mb-1 mt-3">Действие AI:</span> Касание через сутки, через 3 дня. Каждое — с новым углом: снятие страха, кейс до/после, предложение рассрочки.</div>
+                    <div class="col-span-1 md:col-span-3 font-bold text-brand-600"><span class="md:hidden text-slate-400 text-xs uppercase inline-block mr-2">Результат:</span>+30% больше записей</div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 p-6 border-b border-slate-100 items-center">
+                    <div class="col-span-1 md:col-span-3 font-bold text-dark"><span class="md:hidden text-brand-600 text-xs uppercase block mb-1">Сценарий:</span> Прошло 6 месяцев с визита</div>
+                    <div class="col-span-1 md:col-span-6 text-slate-600"><span class="md:hidden text-brand-600 text-xs uppercase block mb-1 mt-3">Действие AI:</span> Личный заход: «Давно не были, пора на проф. гигиену / плановый осмотр», предлагает удобное время на основе прошлых визитов.</div>
+                    <div class="col-span-1 md:col-span-3 font-bold text-brand-600"><span class="md:hidden text-slate-400 text-xs uppercase inline-block mr-2">Результат:</span>35-60% возвращается</div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 p-6 border-b border-slate-100 items-center">
+                    <div class="col-span-1 md:col-span-3 font-bold text-dark"><span class="md:hidden text-brand-600 text-xs uppercase block mb-1">Сценарий:</span> Оставил заявку ночью</div>
+                    <div class="col-span-1 md:col-span-6 text-slate-600"><span class="md:hidden text-brand-600 text-xs uppercase block mb-1 mt-3">Действие AI:</span> Отвечает за 30 секунд, собирает анамнез, предлагает варианты времени. Утром админ видит готовую запись.</div>
+                    <div class="col-span-1 md:col-span-3 font-bold text-brand-600"><span class="md:hidden text-slate-400 text-xs uppercase inline-block mr-2">Результат:</span>Конверсия в запись x2</div>
+                </div>
+
+                <!-- Row 4 -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 p-6 border-b border-slate-100 items-center">
+                    <div class="col-span-1 md:col-span-3 font-bold text-dark"><span class="md:hidden text-brand-600 text-xs uppercase block mb-1">Сценарий:</span> Записался, но не пришел (отмена)</div>
+                    <div class="col-span-1 md:col-span-6 text-slate-600"><span class="md:hidden text-brand-600 text-xs uppercase block mb-1 mt-3">Действие AI:</span> Мягко уточняет причину, предлагает альтернативного врача или время, держит контакт и возвращает в воронку.</div>
+                    <div class="col-span-1 md:col-span-3 font-bold text-brand-600"><span class="md:hidden text-slate-400 text-xs uppercase inline-block mr-2">Результат:</span>Снижение потерь в 2 раза</div>
+                </div>
+
+                <!-- Footer note inside table -->
+                <div class="p-6 bg-brand-50 flex items-start gap-4">
+                    <div class="w-8 h-8 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center flex-shrink-0 mt-1">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <p class="text-slate-700 text-sm md:text-base">
+                        <span class="font-bold">Никакого спама и роботских ответов.</span> AI обучен на реальных переписках клиник: тон, термины врачей, эмпатия. Пациенты пишут «спасибо, что так заботитесь» — они не понимают, что общаются с системой.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Timeline Section -->
+    <section class="py-20 md:py-32 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-brand-600 font-bold uppercase tracking-wider text-sm mb-2 block">Внедрение</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-dark tracking-tight mb-6">
+                    Когда клиника получит <br> первые деньги от системы? <br>
+                    <span class="text-slate-400">— Через 14 дней.</span>
+                </h2>
+                <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                    Никакого простоя. Вы продолжаете работать — мы параллельно строим систему. Запуск без выключения текущих процессов.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                <!-- Step 1 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 relative shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 rounded-full bg-brand-100 text-brand-600 font-bold flex items-center justify-center mb-4 text-sm">01</div>
+                    <h3 class="font-bold text-dark text-lg mb-2">Диагностика базы</h3>
+                    <p class="text-slate-600 text-sm mb-8">Анализируем вашу базу в МИС и CRM. Считаем утечки и точки роста.</p>
+                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider absolute bottom-6 left-6">2 дня</div>
+                </div>
+                <!-- Step 2 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 relative shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 rounded-full bg-brand-100 text-brand-600 font-bold flex items-center justify-center mb-4 text-sm">02</div>
+                    <h3 class="font-bold text-dark text-lg mb-2">Стратегия касаний</h3>
+                    <p class="text-slate-600 text-sm mb-8">Карта сценариев под ваши направления и сегменты пациентов.</p>
+                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider absolute bottom-6 left-6">2 дня</div>
+                </div>
+                <!-- Step 3 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 relative shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 rounded-full bg-brand-100 text-brand-600 font-bold flex items-center justify-center mb-4 text-sm">03</div>
+                    <h3 class="font-bold text-dark text-lg mb-2">Интеграция</h3>
+                    <p class="text-slate-600 text-sm mb-8">Подключаем WhatsApp, CRM. Загружаем прайс и врачей в AI.</p>
+                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider absolute bottom-6 left-6">4 дня</div>
+                </div>
+                <!-- Step 4 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 relative shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 rounded-full bg-brand-100 text-brand-600 font-bold flex items-center justify-center mb-4 text-sm">04</div>
+                    <h3 class="font-bold text-dark text-lg mb-2">Пилотный запуск</h3>
+                    <p class="text-slate-600 text-sm mb-8">Запуск на части базы. Первые возвраты, дообучение тона.</p>
+                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider absolute bottom-6 left-6">5 дней</div>
+                </div>
+                <!-- Step 5 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 relative shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 rounded-full bg-brand-100 text-brand-600 font-bold flex items-center justify-center mb-4 text-sm">05</div>
+                    <h3 class="font-bold text-dark text-lg mb-2">Полный запуск</h3>
+                    <p class="text-slate-600 text-sm mb-8">Масштабируем на всю базу. Передаём дашборд и сопровождение.</p>
+                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider absolute bottom-6 left-6">1 день</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Comparison Section -->
+    <section class="py-20 md:py-32 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-brand-600 font-bold uppercase tracking-wider text-sm mb-2 block">Чем мы отличаемся</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-dark tracking-tight mb-6">
+                    Обычные интеграторы <span class="text-slate-400">VS</span> <br>
+                    Система Solai Agency.
+                </h2>
+                <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                    На рынке полно «AI-энтузиастов», которые продают "просто ботов". Сравните, что вы получаете на самом деле.
+                </p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-8 max-w-5xl mx-auto">
+                <!-- Bad side -->
+                <div class="flex-1 bg-white border border-slate-200 rounded-3xl p-8 md:p-10 shadow-sm">
+                    <div class="inline-block px-3 py-1 bg-red-50 text-red-600 font-bold text-xs uppercase tracking-wider rounded-full mb-6">Обычные боты</div>
+                    <h3 class="text-2xl font-bold text-dark mb-8">Шаблонные решения без опыта</h3>
+                    
+                    <ul class="space-y-5">
+                        <li class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-red-100 text-red-500 flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></div>
+                            <span class="text-slate-600">Отвечают по шаблону, не понимают контекст лечения и диагнозы</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-red-100 text-red-500 flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></div>
+                            <span class="text-slate-600">Первый клиент в медицине — это вы. Все ошибки за ваш счёт</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-red-100 text-red-500 flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></div>
+                            <span class="text-slate-600">Шаблонные сценарии «универсально под любой бизнес»</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-red-100 text-red-500 flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></div>
+                            <span class="text-slate-600">Сдали проект и пропали — гарантии только на словах</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-red-100 text-red-500 flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></div>
+                            <span class="text-slate-600">Не могут мягко отработать медицинские возражения пациента</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Good side -->
+                <div class="flex-1 bg-brand-800 border border-brand-700 rounded-3xl p-8 md:p-10 shadow-xl relative overflow-hidden text-white">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-brand-600 rounded-full blur-[80px] opacity-50 pointer-events-none"></div>
+                    
+                    <div class="inline-block px-3 py-1 bg-brand-500/30 text-brand-200 font-bold text-xs uppercase tracking-wider rounded-full mb-6 border border-brand-400/30">Solai Agency</div>
+                    <h3 class="text-2xl font-bold mb-8">Интеграторы с реальным опытом</h3>
+                    
+                    <ul class="space-y-5 relative z-10">
+                        <li class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-brand-500 text-white flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                            <span class="text-brand-50">Каждый день анализируем реальные диалоги администраторов клиник</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-brand-500 text-white flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                            <span class="text-brand-50">Знаем специфику медицинской ниши изнутри</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-brand-500 text-white flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                            <span class="text-brand-50">ИИ обучен на нашей реальной переписке с пациентами</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-brand-500 text-white flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                            <span class="text-brand-50">Сопровождение 12 месяцев — мы в одной лодке с вами</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-brand-500 text-white flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                            <span class="text-brand-50">Продаём проверенное: рост возвратов, записей, выручки</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Cases Section -->
+    <section class="py-20 md:py-32 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-brand-600 font-bold uppercase tracking-wider text-sm mb-2 block">Опыт</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-dark tracking-tight mb-6">
+                    Наши кейсы в медицине.
+                </h2>
+                <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                    Мы работаем с клиниками, которые ценят результат и системный подход к возврату пациентов.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- Case 1 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-3xl p-8 hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Хирургическо-косметологическая клиника</h3>
+                    <p class="text-brand-600 font-semibold text-sm mb-4">г. Астана</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Внедрение системы для сопровождения пациентов после процедур, работа со страхами перед хирургическим вмешательством и автоматический догрев сомневающихся.
+                    </p>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-3xl p-8 hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Наркологический центр</h3>
+                    <p class="text-brand-600 font-semibold text-sm mb-4">г. Алматы</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Деликатная и эмпатичная отработка заявок 24/7. Быстрый ответ ночью (когда поступает большинство горячих заявок) с последующим переводом на администратора утром.
+                    </p>
+                </div>
+
+                <!-- Case 3 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-3xl p-8 hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Сеть стоматологий</h3>
+                    <p class="text-brand-600 font-semibold text-sm mb-4">Разные города</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Автоматизация приглашений на плановые осмотры и профосмотры. Реактивация спящей базы, которая не была в клинике более года. Снижение отмен визитов.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Disclaimer Box -->
+            <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 max-w-4xl mx-auto flex items-start gap-4">
+                <div class="w-8 h-8 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                </div>
+                <p class="text-slate-500 text-sm leading-relaxed">
+                    <span class="font-bold text-slate-700">Конфиденциальность:</span> В целях соблюдения NDA, врачебной тайны и защиты бизнес-моделей наших партнеров от копирования конкурентами, мы не публикуем точные названия клиник и детальные цифры выручки в открытом доступе. Полные разборы кейсов (до/после) мы показываем <span class="font-medium text-slate-700">только на личной демонстрации</span>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW Demo Section 1 (Arrows and Boxes) -->
+    <section id="demo" class="py-20 md:py-28 bg-white border-b border-slate-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+            <h2 class="text-2xl md:text-3xl font-extrabold text-dark text-center mb-4">
+                Запишитесь на короткую 20 мин <br class="hidden sm:block"> демонстрацию
+            </h2>
+            <p class="text-lg font-bold text-dark text-center mb-16">
+                Это короткая встреча, где :
+            </p>
+
+            <div class="w-full max-w-lg space-y-6 relative">
+                <!-- Box 1 -->
+                <div class="bg-[#f8f9fa] border border-slate-200 rounded-2xl p-6 text-left relative z-10 shadow-sm">
+                    <p class="text-slate-800 font-medium">
+                        — посчитаем прирост прибыли с помощью системы <br> в вашей клинике
+                    </p>
+                    <!-- Curved Arrow Down-Right -->
+                    <div class="absolute -bottom-10 right-10 w-12 h-12 text-brand-500 z-0 hidden sm:block">
+                        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20,10 C 60,10 80,40 80,80" />
+                            <path d="M60,70 L80,85 L85,60" />
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="h-4 sm:h-8"></div> <!-- Spacer for arrow -->
+
+                <!-- Box 2 -->
+                <div class="bg-[#f8f9fa] border border-slate-200 rounded-2xl p-6 text-left relative z-10 shadow-sm">
+                    <p class="text-slate-800 font-medium">
+                        — разберём и покажу, где вы теряете деньги сейчас + рассчитаем прогнозируемую модель прибыли через месяц
+                    </p>
+                    <!-- Curved Arrow Down-Left -->
+                    <div class="absolute -bottom-10 left-10 w-12 h-12 text-brand-500 z-0 hidden sm:block">
+                        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M80,10 C 40,10 20,40 20,80" />
+                            <path d="M40,70 L20,85 L15,60" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="h-4 sm:h-8"></div> <!-- Spacer for arrow -->
+
+                <!-- Box 3 -->
+                <div class="bg-[#f8f9fa] border border-slate-200 rounded-2xl p-6 text-left relative z-10 shadow-sm">
+                    <p class="text-slate-800 font-medium">
+                        — покажем реальные результаты клиник, которые уже работают через эту систему
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW Demo Section 2 (Numbered Steps & CTA) -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 flex flex-col items-center">
+            <h2 class="text-2xl md:text-4xl font-extrabold text-center mb-4 leading-snug">
+                В любом случае <span class="text-brand-600">вы уйдёте с</span><br>
+                <span class="text-brand-600">чётким пониманием:</span>
+            </h2>
+            <p class="text-sm md:text-base text-slate-600 font-medium text-center mb-16 max-w-sm">
+                от - как выделиться — до как повысить конверсию до 40%
+            </p>
+
+            <div class="space-y-10 max-w-md w-full relative">
+                <!-- Decorative vertical line -->
+                <div class="absolute left-1/2 top-0 bottom-0 w-px bg-blue-100 transform -translate-x-1/2 -z-10 hidden sm:block"></div>
+
+                <!-- Step 01 -->
+                <div class="flex flex-col items-center text-center bg-white z-10 py-2">
+                    <div class="w-12 h-12 bg-brand-600 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4 shadow-lg shadow-brand-500/40">01</div>
+                    <p class="text-slate-800 font-semibold px-4">понимание, куда двигаться, чтобы выйти на стабильность;</p>
+                </div>
+                
+                <!-- Step 02 -->
+                <div class="flex flex-col items-center text-center bg-white z-10 py-2">
+                    <div class="w-12 h-12 bg-brand-600 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4 shadow-lg shadow-brand-500/40">02</div>
+                    <p class="text-slate-800 font-semibold px-4">какие элементы вашей модели «проседают»;</p>
+                </div>
+
+                <!-- Step 03 -->
+                <div class="flex flex-col items-center text-center bg-white z-10 py-2">
+                    <div class="w-12 h-12 bg-brand-600 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4 shadow-lg shadow-brand-500/40">03</div>
+                    <p class="text-slate-800 font-semibold px-4">что изменится, если внедрить правильный конвертер + сегмент + трафик;</p>
+                </div>
+
+                <!-- Step 04 -->
+                <div class="flex flex-col items-center text-center bg-white z-10 py-2">
+                    <div class="w-12 h-12 bg-brand-600 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4 shadow-lg shadow-brand-500/40">04</div>
+                    <p class="text-slate-800 font-semibold px-4">какую стратегию имеет смысл тестировать в первую очередь.</p>
+                </div>
+            </div>
+
+            <div class="mt-20 w-full max-w-md mx-auto">
+                <a href="https://wa.me/77476822911" target="_blank" class="block w-full bg-brand-600 hover:bg-brand-700 text-white font-extrabold py-5 px-6 rounded-full shadow-2xl shadow-brand-500/40 transition-all hover:-translate-y-1 text-center text-sm md:text-base">
+                    ЗАПИСАТЬСЯ НА ВСТРЕЧУ ПО МИКРО-ВОРОНКЕ<br class="hidden sm:block">
+                    И ВНЕДРИТЬ ЕЁ С НАМИ
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Video CTA Section -->
+    <section class="py-16 bg-slate-50 flex flex-col items-center px-4 text-center pb-32 border-t border-slate-100">
+        <div class="text-4xl mb-6 tracking-widest">👇👇👇</div>
+        <h2 class="text-xl md:text-3xl font-extrabold mb-4 max-w-3xl leading-snug text-dark">
+            Жмите по кнопке — <span class="text-brand-600">запишем вас на встречу и покажем, как микро-воронка будет работать именно в вашей клинике</span>
+        </h2>
+        <p class="italic text-slate-500 font-medium text-sm md:text-base mb-12">
+            даю гарантию - вы посмотрите на свои продажи по-другому
+        </p>
+
+
+
+        <div class="w-full max-w-md mx-auto">
+            <a href="https://wa.me/77476822911" target="_blank" class="block w-full bg-brand-600 hover:bg-brand-700 text-white font-extrabold py-5 px-6 rounded-full shadow-2xl shadow-brand-500/40 transition-all hover:-translate-y-1 text-center text-sm md:text-base">
+                ЗАПИСАТЬСЯ НА ВСТРЕЧУ ПО МИКРО-ВОРОНКЕ<br class="hidden sm:block">
+                И ТЕСТИРОВАТЬ ЕЁ
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3 opacity-80 grayscale brightness-200">
+                <img src="logo.png" alt="SOLAI Logo" class="h-8 md:h-10 w-auto">
+                <span class="font-montserrat font-semibold text-lg md:text-xl tracking-tight text-white">Solai Agency</span>
+            </div>
+            <p class="text-slate-500 text-sm text-center md:text-left">
+                &copy; <span id="year"></span> SOLAI. Все права защищены. <br class="md:hidden">Система автоматизации для медицинских клиник.
+            </p>
+            <div class="flex gap-4">
+                <a href="#" class="text-slate-500 hover:text-white text-sm transition-colors">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Dynamic year for footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if(mobileMenu.classList.contains('hidden')) {
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            } else {
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            }
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            });
+        });
+    </script>
+
+</body>
+</html>
